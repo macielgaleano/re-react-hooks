@@ -7,7 +7,7 @@ export default function Character({ character, darkMode }) {
       <h4 className={character.status === "Alive" ? "success_color" : "danger_color"}>
         {character.status}
       </h4>
-      <img src={character.image}></img>
+      <img alt="" src={character.image}></img>
     </div>
   );
 }
