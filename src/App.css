@@ -70,3 +70,45 @@
   background: azure;
   padding: 10px;
 }
+
+.darkmode {
+  padding-bottom: 300px;
+  background-color: black;
+}
+
+.ligth {
+  padding-bottom: 300px;
+  background-color: white;
+}
+
+.character {
+  margin: 4px;
+  padding: 10px;
+  width: 30%;
+}
+
+.characters {
+  margin: 0 auto;
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.character-darkmode {
+  background: #282c34;
+  color: azure;
+}
+
+.character-ligth {
+  color: #282c34;
+  border: 1px #ccc solid;
+  background: azure;
+}
+
+.success_color {
+  color: rgb(24, 138, 9);
+}
+
+.danger_color {
+  color: rgb(190, 16, 16);
+}
