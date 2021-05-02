@@ -90,9 +90,11 @@
 .character {
   margin-top: 30px;
   width: 30%;
+  max-height: 500px;
 }
 
 .characters {
+  min-height: 420px;
   margin: 0 auto;
   max-width: 1000px;
   display: flex;
@@ -156,23 +158,6 @@
   border: white 1px solid;
   width: 60%;
   border-radius: 5px;
-}
-
-.dark input :hover {
-  background: black;
-  padding: 10px 5px;
-  color: white;
-  border: rgb(10, 49, 219) 1px solid;
-  width: 60%;
-}
-
-.ligth :hover {
-  padding: 10px 5px;
-  max-width: 1000px;
-  color: black;
-  border: rgb(10, 49, 219) 1px solid;
-  width: 60%;
-  background: #f2f2f2;
 }
 
 .ligth input {

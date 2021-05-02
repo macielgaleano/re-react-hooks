@@ -46,14 +46,21 @@ export default function Characters({ darkMode }) {
       .then((data) => setCharacters(data.results));
   }, []);
 
+  const filteredUsers = useMemo(
+    () =>
+      characters.filter((user) =>
+        user.name.toLowerCase().includes(search.toLocaleLowerCase())
+      ),
+    [characters, search]
+  );
+
   return (
     <>
-      <div className={`search ${darkMode ? "dark" : "ligth"} `}>
-        <input type="text" placeholder="Search character" />
-      </div>
       {favorites.favorites.length > 0 && (
         <>
-          <h2 className={`${darkMode && "text-ligth"} m-2`}>Favorite characters</h2>
+          <h2 className={`${darkMode && "text-ligth mt-2"} m-2 mt-2`}>
+            Favorite characters
+          </h2>
           <div className="characters">
             {favorites &&
               favorites.favorites.length > 0 &&
@@ -71,9 +78,17 @@ export default function Characters({ darkMode }) {
           </div>
         </>
       )}
+      <div className={`search ${darkMode ? "dark" : "ligth"} `}>
+        <input
+          type="text"
+          placeholder="Search character"
+          value={search}
+          onChange={handleSearch}
+        />
+      </div>
       <h2 className={`${darkMode && "text-ligth"} m-2`}>Characters</h2>
       <div className="characters">
-        {characters.map((character) => {
+        {filteredUsers.map((character) => {
           return (
             <Character
               key={character.id}
