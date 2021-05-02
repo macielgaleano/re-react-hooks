@@ -24,10 +24,6 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -121,4 +117,27 @@
 
 .danger_color {
   color: rgb(190, 16, 16);
+}
+
+.character-button-darkmode {
+  margin: 20px 0px;
+  padding: 10px;
+  border: white solid 1px;
+  color: white;
+  background: black;
+}
+.mt-2 {
+  margin-top: 1.5rem;
+}
+
+.mb-2 {
+  margin-bottom: 1.5rem;
+}
+
+.m-2 {
+  margin: 1.5rem;
+}
+
+.text-ligth {
+  color: white;
 }
