@@ -141,3 +141,46 @@
 .text-ligth {
   color: white;
 }
+.search {
+  margin: 0 auto;
+  padding: 20px 0px;
+  display: flex;
+  justify-content: center;
+  max-width: 1000px;
+}
+
+.dark input {
+  background: black;
+  padding: 10px 5px;
+  color: white;
+  border: white 1px solid;
+  width: 60%;
+  border-radius: 5px;
+}
+
+.dark input :hover {
+  background: black;
+  padding: 10px 5px;
+  color: white;
+  border: rgb(10, 49, 219) 1px solid;
+  width: 60%;
+}
+
+.ligth :hover {
+  padding: 10px 5px;
+  max-width: 1000px;
+  color: black;
+  border: rgb(10, 49, 219) 1px solid;
+  width: 60%;
+  background: #f2f2f2;
+}
+
+.ligth input {
+  padding: 10px 5px;
+  max-width: 1000px;
+  color: black;
+  border-radius: 5px;
+  border: black 1px solid;
+  width: 60%;
+  background: #f2f2f2;
+}
