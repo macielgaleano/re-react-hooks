@@ -1,11 +1,5 @@
-import React, {
-  useState,
-  useEffect,
-  useReducer,
-  useMemo,
-  useRef,
-  useCallback,
-} from "react";
+import React, { useState, useReducer, useMemo, useRef, useCallback } from "react";
+import useCharacters from "../hooks/useCharacters";
 import Character from "./Character";
 import Search from "./context/Search";
 
@@ -38,7 +32,9 @@ const favoriteReducers = (state, action) => {
 
 export default function Characters({ darkMode }) {
   const [favorites, dispatch] = useReducer(favoriteReducers, initialState);
-  const [characters, setCharacters] = useState([]);
+  // const [characters, setCharacters] = useState([]);
+
+  const characters = useCharacters("https://rickandmortyapi.com/api/character");
 
   const [search, setSeatch] = useState("");
 
@@ -54,11 +50,11 @@ export default function Characters({ darkMode }) {
     setSeatch(searchInput.current.value);
   }, []);
 
-  useEffect(() => {
-    fetch("https://rickandmortyapi.com/api/character")
-      .then((response) => response.json())
-      .then((data) => setCharacters(data.results));
-  }, []);
+  // useEffect(() => {
+  //   fetch("https://rickandmortyapi.com/api/character")
+  //     .then((response) => response.json())
+  //     .then((data) => setCharacters(data.results));
+  // }, []);
 
   const filteredUsers = useMemo(
     () =>
