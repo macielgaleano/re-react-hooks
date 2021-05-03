@@ -1,5 +1,13 @@
-import React, { useState, useEffect, useReducer, useMemo, useRef } from "react";
+import React, {
+  useState,
+  useEffect,
+  useReducer,
+  useMemo,
+  useRef,
+  useCallback,
+} from "react";
 import Character from "./Character";
+import Search from "./context/Search";
 
 const initialState = {
   favorites: [],
@@ -40,7 +48,11 @@ export default function Characters({ darkMode }) {
     dispatch({ type: "ADD_TO_FAVORITE", payload: favorite });
   };
 
-  const handleSearch = (e) => setSeatch(searchInput.current.value);
+  // const handleSearch = (e) => setSeatch(searchInput.current.value);
+
+  const handleSearch = useCallback(() => {
+    setSeatch(searchInput.current.value);
+  }, []);
 
   useEffect(() => {
     fetch("https://rickandmortyapi.com/api/character")
@@ -80,15 +92,12 @@ export default function Characters({ darkMode }) {
           </div>
         </>
       )}
-      <div className={`search ${darkMode ? "dark" : "ligth"} `}>
-        <input
-          ref={searchInput}
-          type="text"
-          placeholder="Search character"
-          value={search}
-          onChange={handleSearch}
-        />
-      </div>
+      <Search
+        darkMode={darkMode}
+        search={search}
+        handleSearch={handleSearch}
+        searchInput={searchInput}
+      ></Search>
       <h2 className={`${darkMode && "text-ligth"} m-2`}>Characters</h2>
       <div className="characters">
         {filteredUsers.map((character) => {
